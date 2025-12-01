@@ -17,6 +17,8 @@
 CLAUDE.md
 .claude
 .env
-.env.*
+.env.dev
+.env.test
 .bash_history
 .idea
+.composer

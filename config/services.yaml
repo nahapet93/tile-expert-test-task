@@ -22,3 +22,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    GuzzleHttp\Client:
+        class: GuzzleHttp\Client
+
+    App\Service\PriceScraperService:
+        arguments:
+            $httpClient: '@GuzzleHttp\Client'
+            $cache: '@cache.app'
+            $logger: '@logger'
+            $cacheTtl: '%env(int:SCRAPING_CACHE_TTL)%'
